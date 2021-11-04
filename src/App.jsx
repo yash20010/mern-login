@@ -41,11 +41,17 @@ export class App extends Component {
                 className="form-control form-group"
               />
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 onChange={this.changePassword}
                 value={this.state.password}
                 className="form-control form-group"
+              />
+
+              <input
+                type="submit"
+                className="btn btn-danger btn-block"
+                value="Submit"
               />
             </form>
           </div>

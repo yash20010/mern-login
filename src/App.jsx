@@ -11,6 +11,31 @@ export class App extends Component {
       password: '',
     }
   }
+
+  changeFullName = (e) => {
+    this.setState({
+      fullName: e.target.value,
+    })
+  }
+
+  changeUsername = (e) => {
+    this.setState({
+      username: e.target.value,
+    })
+  }
+
+  changeEmail = (e) => {
+    this.setState({
+      email: e.target.value,
+    })
+  }
+
+  changePassword = (e) => {
+    this.setState({
+      password: e.target.value,
+    })
+  }
+
   render() {
     return (
       <div>

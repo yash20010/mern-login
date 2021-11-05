@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export class App extends Component {
@@ -14,6 +15,7 @@ export class App extends Component {
     this.changeUsername = this.changeUsername.bind(this)
     this.changeEmail = this.changeEmail.bind(this)
     this.changePassword = this.changePassword.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
   }
 
   changeFullName = (e) => {
@@ -40,12 +42,39 @@ export class App extends Component {
     })
   }
 
+  onSubmit = (e) => {
+    e.preventDefault()
+
+    const registered = {
+      fullName: this.state.fullName,
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password,
+    }
+
+    axios
+      .post('http://localhost:4000/app/signup', registered)
+      .then((res) => {
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+
+    this.setState({
+      fullName: '',
+      username: '',
+      email: '',
+      password: '',
+    })
+  }
+
   render() {
     return (
       <div>
         <div className="container">
           <div className="form-div">
-            <form action="">
+            <form onSubmit={this.onSubmit}>
               <input
                 type="text"
                 placeholder="Full Name"

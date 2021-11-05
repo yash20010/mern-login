@@ -10,6 +10,10 @@ export class App extends Component {
       email: '',
       password: '',
     }
+    this.changeFullName = this.changeFullName.bind(this)
+    this.changeUsername = this.changeUsername.bind(this)
+    this.changeEmail = this.changeEmail.bind(this)
+    this.changePassword = this.changePassword.bind(this)
   }
 
   changeFullName = (e) => {

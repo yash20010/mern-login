@@ -73,46 +73,53 @@ export class App extends Component {
     return (
       <div>
         <div className="container">
-          <div className="form-div">
-            <form onSubmit={this.onSubmit}>
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
               <input
                 type="text"
                 placeholder="Full Name"
                 onChange={this.changeFullName}
                 value={this.state.fullName}
-                className="form-control form-group"
+                className="form-control"
               />
+            </div>
 
+            <div className="form-group">
               <input
                 type="text"
                 placeholder="Username"
                 onChange={this.changeUsername}
                 value={this.state.username}
-                className="form-control form-group"
+                className="form-control"
               />
+            </div>
 
+            <div className="form-group">
               <input
                 type="text"
                 placeholder="Email"
                 onChange={this.changeEmail}
                 value={this.state.email}
-                className="form-control form-group"
+                className="form-control"
               />
+            </div>
+
+            <div className="form-group">
               <input
                 type="password"
                 placeholder="Password"
                 onChange={this.changePassword}
                 value={this.state.password}
-                className="form-control form-group"
+                className="form-control"
               />
+            </div>
 
-              <input
-                type="submit"
-                className="btn btn-danger btn-block"
-                value="Submit"
-              />
-            </form>
-          </div>
+            <input
+              type="submit"
+              className="btn btn-danger btn-block"
+              value="Submit"
+            />
+          </form>
         </div>
       </div>
     )
